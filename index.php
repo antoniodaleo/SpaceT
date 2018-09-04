@@ -1,10 +1,15 @@
 <?php
     // INDEX
 
+    //Controlo de Sessão 
+    session_start(); 
+    if(!isset($_SESSION['a'])){
+        $_SESSION['a']= 'inicio'; 
+    }
+
     include_once('_cabecalho.php');
     
-    echo '<p>Teste de fontawasom <spam class="fa fa-times"></spam> </p>';
-
+    include_once('routes.php');
 
     include_once('_rodape.php');
 ?>
