@@ -1,8 +1,11 @@
 <?php
     return[
-        'NOME_BD' => 'minha_base_dados',
-        'PASS_BD' => 'abc123', 
-        ''
+        //
+        'BD_HOST' => 'localhost',
+        'BD_DATABASE' => '',
+        'BD_CHARSET' => 'utf8',
+        'BD_USERNAME' => 'root',
+        'BD_PASSWORD' => '123',
         ]
 
 

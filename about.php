@@ -7,8 +7,7 @@
     }
 
     // Aceder á bd
-    $configs = include('inc/config.php');
-    echo $configs['NOME_BD']; 
+    $gestor =new cl_gestorBD(); 
 ?>
 
 
