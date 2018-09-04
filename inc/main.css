@@ -1,0 +1,78 @@
+/* ficheiro principal do scss */
+* {
+  margin: 0px;
+  padding: 0px; }
+
+.mrg-ver-5 {
+  margin-top: 5px 0px; }
+
+.mrg-ver-10 {
+  margin-top: 10px 0px; }
+
+.mrg-ver-15 {
+  margin-top: 15px 0px; }
+
+.mrg-ver-20 {
+  margin-top: 20px 0px; }
+
+.mrg-ver-30 {
+  margin-top: 30px 0px; }
+
+.mrg-ver-40 {
+  margin-top: 40px 0px; }
+
+.mrg-5 {
+  margin: 5px; }
+
+.mrg-10 {
+  margin: 10px; }
+
+.mrg-15 {
+  margin: 15px; }
+
+.mrg-20 {
+  margin: 20px; }
+
+.mrg-30 {
+  margin: 30px; }
+
+.mrg-40 {
+  margin: 40px; }
+
+.pdg-ver-5 {
+  padding-top: 5px 0px; }
+
+.pdg-ver-10 {
+  padding-top: 10px 0px; }
+
+.pdg-ver-15 {
+  padding-top: 15px 0px; }
+
+.pdg-ver-20 {
+  padding-top: 20px 0px; }
+
+.pdg-ver-30 {
+  padding-top: 30px 0px; }
+
+.pdg-ver-40 {
+  padding-top: 40px 0px; }
+
+.pdg-5 {
+  padding: 5px; }
+
+.pdg-10 {
+  padding: 10px; }
+
+.pdg-15 {
+  padding: 15px; }
+
+.pdg-20 {
+  padding: 20px; }
+
+.pdg-30 {
+  padding: 30px; }
+
+.pdg-40 {
+  padding: 40px; }
+
+/*# sourceMappingURL=main.css.map */
