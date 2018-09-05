@@ -18,7 +18,9 @@
         // Apresenta a pagina acerca de
         case 'about':     include_once('about.php'); break;
         // Abre o menu do Setup
-        case 'setup':     include_once('setup/instalacao.php'); break; 
+        case 'setup':     include_once('setup/setup.php'); break; 
+        // Setup - criar base de dados
+        case 'setup_criar_bd': include_once('setup/setup.php'); break;
 
     }
 

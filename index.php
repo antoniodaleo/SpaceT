@@ -12,4 +12,5 @@
     include_once('routes.php');
 
     include_once('_rodape.php');
+    
 ?>

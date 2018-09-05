@@ -1,5 +1,5 @@
 <?php
-    // Setup ================================
+// Setup ================================
     
     // Verificar a sessão
     if(!isset($_SESSION['a'])){
@@ -8,6 +8,3 @@
 
 
 ?>
-
-<button>Operação 1</button>
-

@@ -75,5 +75,31 @@
 .pdg-40 {
   padding: 40px; }
 
-  
+.btn-size-100 {
+  width: 100; }
+
+.btn-size-150 {
+  width: 150; }
+
+.btn-size-200 {
+  width: 200; }
+
+.btn-size-250 {
+  width: 250; }
+
+.btn-size-300 {
+  width: 300; }
+
+/*Cabecalho */
+.cabecalho {
+  padding: 20px;
+  background-color: black;
+  color: white; }
+
+/*rodape */
+.rodape {
+  padding: 20px;
+  background-color: black;
+  color: white; }
+
 /*# sourceMappingURL=main.css.map */
