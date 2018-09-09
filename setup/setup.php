@@ -21,6 +21,12 @@
         // Executa os procedimento para criaacao de base de dados
             break;
         
+        case 'setup_inserir_utilizador';
+            include('setup_inserir_utilizador.php');
+            echo 'Base de dados criada'; 
+        // Inserir utilizadores
+            break;
+
         default:
 
             break;
@@ -36,7 +42,7 @@
     <div class="text-center">
     <h2>SETUP</h2>
         <p><a href="?a=setup_criar_bd" class="btn btn-secondary btn-size-250">Criar Bd</a></p>
-        <p><a href="" class="btn btn-secondary btn-size-250">Inserir Usuario</a></p>
+        <p><a href="?a=setup_inserir_utilizador" class="btn btn-secondary btn-size-250">Inserir Usuario</a></p>
         
         <hr>
         <p><a href="?a=inicio" class="btn btn-secondary btn-size-150">Voltar</a></p>
