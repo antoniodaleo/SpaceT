@@ -10,7 +10,7 @@
     //inclui as funcoes necessarias do sistema
     include_once('inc/funcoes.php');
     include_once('inc/gestorBD.php');
-
+    include_once('users/barra_utilizador.php');
     include_once('_cabecalho.php');
     
     include_once('routes.php');

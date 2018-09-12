@@ -13,17 +13,22 @@
     }
 
 
-    funcoes::DestroiSessao(); 
+    //funcoes::DestroiSessao(); 
     
     // Verificar o login
     if(!funcoes::VerificarLogin()){
         $a='login'; 
     }
 
+    // Barra do Utilizador
+    include_once('users/barra_utilizador.php'); 
+
 
     switch($a){
         // Apresentar login
-        case 'login':     include_once('users/login.php'); break;      
+        case 'login':     include_once('users/login.php'); break;  
+        // Apresentar Logout
+        case 'logout':  include_once('users/logout.php'); break; 
         // Apresentar a pagina inicial
         case 'inicio':    include_once('inicio.php'); break;  
         // Apresenta a pagina acerca de
