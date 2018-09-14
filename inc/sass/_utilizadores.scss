@@ -5,7 +5,13 @@
     text-align: right; 
     background-color: burlywood;
     color: black; 
-
+    a{
+        text-decoration: none; 
+        color: rgb(212, 212, 212);
+    }
+    a:hover{
+        color: white; 
+    }
 }
 
 .barra_utilizadores_inativo{

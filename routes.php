@@ -17,7 +17,15 @@
     
     // Verificar o login
     if(!funcoes::VerificarLogin()){
-        $a='login'; 
+        // Casos especiais 
+        $routes_especiais = [
+            'recuperar_password'
+        ];
+        // Bypass sistema normal
+        if(!in_array($a, $routes_especiais)){
+            $a='login'; 
+        }
+
     }
 
     // Barra do Utilizador
@@ -28,7 +36,9 @@
         // Apresentar login
         case 'login':     include_once('users/login.php'); break;  
         // Apresentar Logout
-        case 'logout':  include_once('users/logout.php'); break; 
+        case 'logout':  include_once('users/logout.php'); break;
+        // Recuperar password
+        case 'recuperar_password': include_once('users/recuperar_password.php'); break; 
         // Apresentar a pagina inicial
         case 'inicio':    include_once('inicio.php'); break;  
         // Apresenta a pagina acerca de

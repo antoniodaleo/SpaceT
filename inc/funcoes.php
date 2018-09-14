@@ -29,6 +29,19 @@
             $_SESSION['nome'] = $dados[0]['nome']; 
         }
 
+        public static function CriarCodigoAlfanumerio($numChars){
+            // Criar codigo aleatorio alfanumerico
+            $codigo = '';
+            $caracteres = 'abcdefghijklmnopqrstuvxywzABCDEFGHIJKLMNOPQRSTUVXYWZ0123456789!()-%';
+                for($i = 0; $i<$numChars; $i++){
+                    $codigo .= substr($caracteres,rand(0, strlen($caracteres)) , 1); 
+                }
+            return $codigo;
+
+
+        }
+
+
 }
    
        

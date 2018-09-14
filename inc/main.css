@@ -109,6 +109,11 @@
   text-align: right;
   background-color: burlywood;
   color: black; }
+  .barra_utilizadores a {
+    text-decoration: none;
+    color: #d4d4d4; }
+  .barra_utilizadores a:hover {
+    color: white; }
 
 .barra_utilizadores_inativo {
   color: black; }

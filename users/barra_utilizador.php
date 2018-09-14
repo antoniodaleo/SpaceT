@@ -17,7 +17,12 @@
 
     
         <div class="barra_utilizadores">
-            <span class="<?php echo $classe ?>"><?php  echo $nome_utilizador ?></span> | 
-            <a href="?a=logout">logout</a>
+            <span class="<?php echo $classe ?>"> <i class="fas fa-user"></i> <?php  echo $nome_utilizador ?></span> 
+            
+            <?php if(funcoes::VerificarLogin()): ?>
+                &nbsp|&nbsp<a href="?a=logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            <?php endif; ?>
+            
+            
         </div>
  
