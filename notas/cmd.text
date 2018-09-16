@@ -1,1 +1,10 @@
 sass -w inc/sass:inc/
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="card m-3 p-3 text-center">
+                <h3>Titulo</h3>
+            </div>
+           
+        </div>
+    </div>

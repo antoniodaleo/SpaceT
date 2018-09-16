@@ -40,12 +40,23 @@
 
 
         }
+        //=================================================================
+        public static function CriarLOG($mensagem ,$utilizador){
+            // Cria um registro em LOGS
+            $gestor = new cl_gestorBD(); 
+            $data_hora = new DateTime();
+            $parametros = [
+                ':data_hora'       => $data_hora->format('Y-m-d H:i:s'),
+                ':utilizador'      => $utilizador, 
+                ':mensagem'        => $mensagem
+            ];
 
+            $gestor->EXE_NON_QUERY(
+                'INSERT INTO logs(data_hora, utilizador, mensagem)
+                 VALUES (:data_hora, :utilizador, :mensagem)',$parametros);
 
-}
+            }
+
+    }
    
-       
-
-
-
 ?>

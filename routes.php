@@ -43,6 +43,11 @@
         case 'logout':  include_once('users/logout.php'); break;
         // Recuperar password
         case 'recuperar_password': include_once('users/recuperar_password.php'); break; 
+        // Perfil
+        case 'perfil':  include_once('users/perfil/perfil_menu.php'); break; 
+        // Alterar Password
+        case 'perfil_alterar_password':  include_once('users/perfil/perfil_alterar_password.php'); break; 
+
         // Apresentar a pagina inicial
         case 'inicio':    include_once('inicio.php'); break;  
         // Apresenta a pagina acerca de

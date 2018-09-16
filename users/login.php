@@ -32,7 +32,10 @@
             // Inicia a sessão
             $erro = false; 
             funcoes::IniciarSessao($dados); 
-            echo 'ok';
+            
+            //LOG
+            funcoes::CriarLOG('Utilizador'.$_SESSION['nome'].' fez login', $_SESSION['nome']);
+
         }
     }
 ?>
@@ -75,10 +78,13 @@
                 <p>BEM - VINDO, <strong><?php echo $dados[0]['nome'] ?></strong></p>
                 <a href="?a=inicio" class="btn btn-primary">Avançar</a>
             </div>
+           
         </div>
     </div>
 
     <p>ok</p>
 <?php endif; ?>
 
- 
+                <div class="text-center">
+                    <a href="?a=setup" class="btn btn-secondary ">Setup</a>
+                </div>

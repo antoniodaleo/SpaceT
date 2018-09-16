@@ -64,8 +64,8 @@
                 $conn->EXE_NON_QUERY(
                     'UPDATE utilizadores SET palavra_passe = :palavra_passe 
                     WHERE id_utilizador = :id_utilizador', $parametros);
-                    echo '<p>Password recuperada com sucesso: '.$nova_password.'</p>';
-                    echo '<p>Numero id: '.$test.'</p>';
+                    
+                    funcoes::CriarLOG('O utilizador '.$robo[0]['nome'].' solicitou a recuperação da password ', $robo[0]['nome']); 
             }else{
                 $erro= true; 
                 $mensagem ='ATENÇÃO : O email não foi enviada com sucesso'; 

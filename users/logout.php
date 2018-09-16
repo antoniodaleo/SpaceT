@@ -7,7 +7,8 @@
     $nome= $_SESSION['nome']; 
 
     funcoes::DestroiSessao(); 
-
+    // LOG
+    funcoes::CriarLOG('Utilizador '.$nome.' fez logout ', $nome);
 ?>
 
 <div class="container-fluid">

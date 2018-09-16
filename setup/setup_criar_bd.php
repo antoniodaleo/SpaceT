@@ -42,3 +42,4 @@
     
 
 ?>
+  <div class="alert alert-success text-center">Banco criado com sucesso</div>
