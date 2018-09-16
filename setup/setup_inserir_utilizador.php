@@ -15,7 +15,7 @@
         ':utilizador'=>'admin',
         ':palavra_passe'=>md5('admin'),
         ':nome'=>'administrador', 
-        ':email'=>'admini@teste.com', 
+        ':email'=>'spacespaceteste@gmail.com', 
         ':criado_em'=>$data->format('Y-m-d H:i:s'),
         ':atualizado_em'=>$data->format('Y-m-d H:i:s')  
     ];
@@ -24,8 +24,7 @@
     // Inserir o utilizador
     $gestor->EXE_NON_QUERY(
         'INSERT INTO utilizadores(utilizador, palavra_passe, nome, email , criado_em, atualizado_em)
-        VALUES (:utilizador,:palavra_passe,:nome, :email,:criado_em,:atualizado_em)',$parametros
-    );
+         VALUES (:utilizador,:palavra_passe,:nome, :email,:criado_em,:atualizado_em)',$parametros);
 
 
    

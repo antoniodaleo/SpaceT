@@ -16,10 +16,14 @@
     //funcoes::DestroiSessao(); 
     
     // Verificar o login
+    
     if(!funcoes::VerificarLogin()){
         // Casos especiais 
         $routes_especiais = [
-            'recuperar_password'
+            'recuperar_password',
+            'setup',
+            'setup_criar_bd',
+            'setup_inserir_utilizador'
         ];
         // Bypass sistema normal
         if(!in_array($a, $routes_especiais)){
@@ -27,7 +31,7 @@
         }
 
     }
-
+    
     // Barra do Utilizador
     include_once('users/barra_utilizador.php'); 
 
@@ -46,7 +50,7 @@
         // Abre o menu do Setup
         case 'setup':     include_once('setup/setup.php'); break; 
         // Setup - criar base de dados
-        case 'setup_criar_bd': include_once('setup/setup.php'); break;
+        case 'setup_criar_bd': include_once('setup/setup_criar_bd.php'); break;
         // Setup - inserir utilizador
         case 'setup_inserir_utilizador';  include_once('setup/setup_inserir_utilizador.php'); break; 
 
