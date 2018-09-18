@@ -6,6 +6,15 @@
         exit(); 
     }
 
+    $erro = false; 
+    $mensagem='';
+
+    // Verifica permissoes acesso ao sistema
+    if(!funcoes::Permissao(0)){
+        $erro = true; 
+        $mensagem = 'Nao tem permissao'; 
+    }
+
     // Vai buscar todas as informacoes do utilizador
     $gestor = new cl_gestorBD(); 
     $parametros = [
@@ -16,6 +25,13 @@
         WHERE id_utilizador = :id_utilizador', $parametros);
         
 ?>
+    <?php if($erro):?>
+        <div class="text-center">
+            <h3><?php echo $mensagem ?></h3>
+            <a href="?a=inicio" class="btn btn-primary btn-size-150">Voltar</a>
+        </div>
+    <?php else: ?>
+
 
     <div class="container">
         <div class="row justify-content-center">
@@ -28,4 +44,10 @@
                 <a href="?a=perfil_alterar_password"><i class="fas fa-unlock-alt"></i> Alter password </a>
             </div>
         </div>
+
+        <div class="text-center">
+            <a href="?a=inicio" class="btn btn-primary btn-size-150 m-3">Voltar</a>
+        </div>
     </div>
+
+    <?php endif?>

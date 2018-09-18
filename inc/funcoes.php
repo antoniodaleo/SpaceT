@@ -20,6 +20,7 @@
         public static function DestroiSessao(){
             unset($_SESSION['id_utilizador']);
             unset($_SESSION['nome']); 
+            unset($_SESSION['permissoes']); 
         }
 
     //=======================================
@@ -27,6 +28,7 @@
             //Iniciar a sessao
             $_SESSION['id_utilizador'] = $dados[0]['id_utilizador']; 
             $_SESSION['nome'] = $dados[0]['nome']; 
+            $_SESSION['permissoes']= $dados[0]['permissoes'];
         }
 
         public static function CriarCodigoAlfanumerio($numChars){
@@ -57,6 +59,15 @@
 
             }
 
+
+            public static function Permissao($index){
+                // Verifica se o utilizador com sess ativa 
+                if(substr($_SESSION['permissoes'],$index,1) ==1){
+                    return true; 
+                }else{
+                    return false; 
+                }
+            }
     }
    
 ?>
