@@ -47,6 +47,11 @@
         case 'perfil':  include_once('users/perfil/perfil_menu.php'); break; 
         // Alterar Password
         case 'perfil_alterar_password':  include_once('users/perfil/perfil_alterar_password.php'); break; 
+        // Alterar Email
+        case 'perfil_alterar_email':  include_once('users/perfil/perfil_alterar_email.php'); break; 
+        
+        //Opcões do administrador
+        case 'utilizadores_gerir':      include_once('admin/utilizadores_gerir.php'); break; 
 
         // Apresentar a pagina inicial
         case 'inicio':    include_once('inicio.php'); break;  
@@ -58,7 +63,8 @@
         case 'setup_criar_bd': include_once('setup/setup_criar_bd.php'); break;
         // Setup - inserir utilizador
         case 'setup_inserir_utilizador';  include_once('setup/setup_inserir_utilizador.php'); break; 
-
+        // Formulario novo utilizador
+        case 'utilizadores_adicionar': include_once('admin/utilizadores_adicionar.php'); break;
     }
 
 

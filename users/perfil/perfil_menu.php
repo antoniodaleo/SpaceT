@@ -41,7 +41,6 @@
                 <!-- Dados do utilizidar -->
                 <h5><i class="far fa-user"></i> <?php echo $dados[0]['nome'] ?></h5>
                 <p><i class="fas fa-at"></i> <?php echo $dados[0]['email'] ?> </p>
-                <a href="?a=perfil_alterar_password"><i class="fas fa-unlock-alt"></i> Alter password </a>
             </div>
         </div>
 

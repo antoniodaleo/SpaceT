@@ -31,6 +31,8 @@
                 <a class="dropdown-item" href="?a=perfil_alterar_password">Alterar Password</a>
                 <a class="dropdown-item" href="?a=perfil_alterar_email">Alterar Email</a>
                 <div class="dropdown-divider"></div>
+
+                
                 <!-- opções disponíveis apenas para admin -->
                 <?php if(funcoes::Permissao(0)): ?>
                     <a class="dropdown-item" href="?a=utilizadores_gerir">Gerir utilizadores</a>

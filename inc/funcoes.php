@@ -20,6 +20,7 @@
         public static function DestroiSessao(){
             unset($_SESSION['id_utilizador']);
             unset($_SESSION['nome']); 
+            unset($_SESSION['email']);
             unset($_SESSION['permissoes']); 
         }
 
@@ -28,6 +29,7 @@
             //Iniciar a sessao
             $_SESSION['id_utilizador'] = $dados[0]['id_utilizador']; 
             $_SESSION['nome'] = $dados[0]['nome']; 
+            $_SESSION['email'] = $dados[0]['email']; 
             $_SESSION['permissoes']= $dados[0]['permissoes'];
         }
 
