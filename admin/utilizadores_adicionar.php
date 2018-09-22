@@ -1,6 +1,6 @@
 <?php
     // Gestao do utilizador - Adicionar novo utilizadore =======
-    // Verificar a sessão
+    // Verificar a sessão  Aula 66 da fare
     if(!isset($_SESSION['a'])){
         exit(); 
     }
@@ -67,15 +67,31 @@
                         <button class="btn btn-primary btn-size-150">Criar Utilizador</button>
                     </div>
                     <hr>
-                    <div class="text-center">
+                    <div class="text-center m-3">
                         <button type="button" class="btn btn-primary btn-size-200" data-toggle="collapse"
                         data-target="#caixa_permissoes">
                             Definir permissoses
                         </button>
                     </div>
+                    <!-- Caixa permissoes -->
                     <div class="collapse" id="caixa_permissoes">
-                        <div class="card p-3">
-                            <p>Texto dentro da caixa collapsvavel</p>
+                        <div class="card p-3 ">
+                            <?php
+                                $permissoes = include_once('inc/permissoes.php');
+                                foreach($permissoes as $permissao){ ?>
+                                
+                                <div class="checkbox">
+                                    <label for="">
+                                        <input type="checkbox" name="check_permissao[]" 
+                                        id="titulo da permissao">
+                                        <span class="permissao-titulo"> <?php echo $permissao['permissao'] ?> </span>
+                                    </label><br>
+                                    <span class="permissao-sumario"> <?php echo $permissao['sumario'] ?></span>
+                                </div>
+                                    
+                            <?php } ?>
+                           
+
                         </div>
                     </div>
 

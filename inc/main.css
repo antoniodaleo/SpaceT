@@ -123,4 +123,12 @@
 .barra_utilizadores_ativo {
   color: red; }
 
+.permissao-titulo {
+  font-weight: bold; }
+
+.permissao-sumario {
+  font-size: .8em;
+  font-style: italic;
+  opacity: .7; }
+
 /*# sourceMappingURL=main.css.map */
