@@ -1,6 +1,6 @@
 <?php
     // Gestao do utilizador - Adicionar novo utilizadore =======
-    // Verificar a sessão  Aula 66 da fare
+    // Verificar a sessão  Aula 70
     if(!isset($_SESSION['a'])){
         exit(); 
     }
@@ -11,6 +11,97 @@
         $erro_permissao= true; 
     }
 
+    $gestor = new cl_gestorBD(); 
+    $erro= false; 
+    $mensagem = '';
+    $successo = false; 
+
+
+    if($_SERVER['REQUEST_METHOD']== 'POST'){
+        // vAI BUSCAR VALOR DO FORMULARIO
+        $utilizador =    $_POST['text_utilizador']; 
+        $password  =     $_POST['text_password']; 
+        $nome_completo = $_POST['text_nome'];
+        $email =         $_POST['text_email']; 
+
+        //Permissoes
+        //var_dump($permissoes);
+        $total_permissoes = (count(include('inc/permissoes.php'))); 
+        $permissoes =[]; 
+        if(isset($_POST['check_permissao'])){
+
+            $permissoes = $_POST['check_permissao']; 
+        }
+        $permissoes_finais = ''; 
+        for($i=0; $i < 100 ; $i++){
+            if($i<$total_permissoes){
+                if(in_array($i, $permissoes)){
+                    $permissoes_finais.='1';
+                }else{
+                    $permissoes_finais.= '0';
+                }
+                     
+            }else{
+                $permissoes_finais.='1';
+            }
+            
+        }
+         
+       // echo $permissoes_finais;
+       // Verifica os dados na base de dados
+        $parametros = [
+            ':utilizador' => $utilizador 
+        ];
+
+        $dtemp = $gestor->EXE_QUERY('SELECT utilizador 
+                                    FROM utilizadores 
+                                    WHERE utilizador = :utilizador', $parametros);
+
+        if(count($dtemp)!=0){
+            $erro = true; 
+            $mensagem = 'ja existe utilizador com mesmo nome'; 
+        }
+
+        //Verifica se esiste outro utlizador com o mesmo email 
+        if(!$erro){
+            $parametros = [
+                ':email' => $email
+            ];
+            $dtemp = $gestor->EXE_QUERY('SELECT email 
+                                        FROM utilizadores 
+                                        WHERE utilizador = :email', $parametros);
+
+            if(count($dtemp)!=0){
+                $erro = true; 
+                $mensagem = 'ja existe utilizador com mesma email'; 
+            }
+         
+        }
+
+       // Inserir no banco o utilizador
+       if(!$erro){
+           $parametros = [
+                ':utilizador' => $utilizador, 
+                ':palavra_passe' =>md5($password),
+                ':nome' => $nome_completo, 
+                ':email' => $email, 
+                ':permissoes' => $permissoes_finais,
+                ':criado_em' => DATAS::DataHoraAtualBD(),  
+                ':atualizado_em' => DATAS::DataHoraAtualBD() 
+           ];
+
+           $gestor-> EXE_NON_QUERY('INSERT INTO utilizadores 
+                        (utilizador, palavra_passe, nome, email , permissoes, criado_em, atualizado_em) 
+                        VALUES 
+                        (:utilizador, :palavra_passe,:nome, :email, :permissoes,:criado_em , :atualizado_em)'
+                        ,$parametros);
+                    
+                        echo 'ok'; 
+       }
+       // 
+
+
+    }
 ?>
 
  <div class="container">
@@ -75,23 +166,26 @@
                     </div>
                     <!-- Caixa permissoes -->
                     <div class="collapse" id="caixa_permissoes">
-                        <div class="card p-3 ">
+                        <div class="card p-3 caixa_permissoes">
                             <?php
-                                $permissoes = include_once('inc/permissoes.php');
+                                $permissoes = include('inc/permissoes.php');
+                                $id = 0; 
                                 foreach($permissoes as $permissao){ ?>
                                 
                                 <div class="checkbox">
                                     <label for="">
                                         <input type="checkbox" name="check_permissao[]" 
-                                        id="titulo da permissao">
+                                        id="check_permissao" value="<?php echo $id ?>">
                                         <span class="permissao-titulo"> <?php echo $permissao['permissao'] ?> </span>
                                     </label><br>
-                                    <span class="permissao-sumario"> <?php echo $permissao['sumario'] ?></span>
+                                    <p class="permissao-sumario"> <?php echo $permissao['sumario'] ?></p>
                                 </div>
                                     
-                            <?php } ?>
-                           
-
+                            <?php $id++; } ?>
+                            <!-- Todas o nenhuma -->
+                            <div>
+                                <a href="#" onclick="checkTodos(); return false">Todas</a> <a href="#" onclick="checkNunhumas(); return false">Nenhuma</a> 
+                            </div>           
                         </div>
                     </div>
 

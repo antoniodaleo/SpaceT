@@ -13,3 +13,14 @@ function gerarPassword(numLett) {
     // Coloca o codigo no campo pass
     text_password.value = codigo; 
 }
+
+
+//=====================================================
+function checkTodos(){
+    $('input:checkbox').prop('checked',true);
+}
+
+//======================================
+function checkNunhumas(){
+    $('input:checkbox').prop('checked',false);
+}
