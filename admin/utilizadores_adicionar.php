@@ -95,14 +95,31 @@
                         VALUES 
                         (:utilizador, :palavra_passe,:nome, :email, :permissoes,:criado_em , :atualizado_em)'
                         ,$parametros);
-                    
-                        echo 'ok'; 
+                    // Enviar o email para o novo utilizador
+                    $mensagem = [
+                        $email, 
+                        'SPACET - Criacao de nova conta do utilizador',  
+                        "<p> Foi criada a nova conta do utlizador com os seg dados</p><p>Utilizador : $utilizador</p><p>Password : $password</p>"
+                    ];
+
+                    $mail = new emails();
+                    $mail->EnviarEmail($mensagem);
+
+
+                      echo '<div class="alert alert-success text-center">Utilizador adicionado com sucesso </div>';
+
        }
        // 
 
 
     }
 ?>
+  <!-- Apresenta o erro no caso de existir -->  
+ <?php
+    if($erro){
+        echo '<div class="alert alert-danger text-center">'.$mensagem.'</div>';
+    }
+ ?>
 
  <div class="container">
         <div class="row justify-content-center">
